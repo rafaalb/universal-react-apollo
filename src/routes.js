@@ -5,7 +5,6 @@ const routes = [
   {
     path: '/',
     name: 'home',
-    exact: true,
     component: Ilustrations,
   },
   {

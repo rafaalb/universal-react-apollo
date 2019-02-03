@@ -12,7 +12,7 @@ const server = express();
 
 server.use('/static', express.static('dist'))
 
-server.use(async (req, res) => {
+server.get('*', async (req, res) => {
   const context = {}
   const sheet = new ServerStyleSheet(); 
   const client = ApolloClient();
