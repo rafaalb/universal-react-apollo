@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const nodeExternals = require('webpack-node-externals');
+// const LoadablePlugin = require('@loadable/webpack-plugin')
 const path = require('path');
 
 var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
@@ -43,6 +44,8 @@ const clientConfig = {
   optimization: {
     minimize: true,
     splitChunks: {
+      name: true,
+      chunks: 'all',
       cacheGroups: {
 				commons: {
 					test: /[\\/]node_modules[\\/]/,
@@ -57,7 +60,8 @@ const clientConfig = {
     filename: '[name].js'
   },
   plugins: [
-    // new BundleAnalyzerPlugin()
+    // new BundleAnalyzerPlugin(),
+    // new LoadablePlugin()
   ]
 }
 

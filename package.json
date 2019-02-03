@@ -10,6 +10,8 @@
     "test": "jest"
   },
   "devDependencies": {
+    "@loadable/babel-plugin": "^5.5.0",
+    "@loadable/webpack-plugin": "^5.5.0",
     "babel-core": "^6.10.4",
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
@@ -23,6 +25,7 @@
     "webpack-node-externals": "^1.7.2"
   },
   "dependencies": {
+    "@loadable/server": "^5.5.0",
     "apollo-boost": "^0.1.27",
     "apollo-client": "^2.4.12",
     "apollo-link-http": "^1.5.11",

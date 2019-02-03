@@ -5,11 +5,13 @@ const routes = [
   {
     path: '/',
     name: 'home',
+    exact: true,
     component: Ilustrations,
   },
   {
     path: '/ilustration/:id',
     name: 'ilustration',
+    exact: true,
     component: Ilustration,
   },
 ];
