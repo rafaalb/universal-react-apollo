@@ -10,13 +10,13 @@
     "test": "jest"
   },
   "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.3.1",
     "@loadable/babel-plugin": "^5.5.0",
     "@loadable/webpack-plugin": "^5.5.0",
-    "babel-core": "^6.10.4",
-    "babel-loader": "^7.1.2",
+    "babel-loader": "^8.0.5",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.11.1",
-    "brotli-webpack-plugin": "^1.1.0",
     "compression-webpack-plugin": "^2.0.0",
     "nodemon": "^1.18.9",
     "webpack-bundle-analyzer": "^3.0.3",
@@ -25,6 +25,7 @@
     "webpack-node-externals": "^1.7.2"
   },
   "dependencies": {
+    "@loadable/component": "^5.5.0",
     "@loadable/server": "^5.5.0",
     "apollo-boost": "^0.1.27",
     "apollo-client": "^2.4.12",

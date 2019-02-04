@@ -3,7 +3,7 @@ import { hydrate } from 'react-dom';
 import ApolloClient from './../lib/withData';
 import { ApolloProvider } from 'react-apollo';
 import { BrowserRouter } from 'react-router-dom'
-// import { loadableReady } from '@loadable/component'
+import { loadableReady } from '@loadable/component'
 
 const client = ApolloClient();
 
@@ -16,6 +16,6 @@ const app = (
     </BrowserRouter>
   </ApolloProvider>
 )
-// loadableReady(() => {
+loadableReady(() => {
   hydrate(app, document.getElementById('app'));
-// })
+})

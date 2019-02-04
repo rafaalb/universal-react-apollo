@@ -1,6 +1,6 @@
 const webpack = require('webpack');
 const nodeExternals = require('webpack-node-externals');
-// const LoadablePlugin = require('@loadable/webpack-plugin')
+const LoadablePlugin = require('@loadable/webpack-plugin')
 const path = require('path');
 
 var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
@@ -9,6 +9,7 @@ const js = {
   rules: [
     {
       test: /\.js$/,
+      exclude: /node_modules/,
       loader: 'babel-loader'
     }
   ]
@@ -57,11 +58,12 @@ const clientConfig = {
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].js'
+    filename: '[name].js',
+    chunkFileName: '[name].bundle.js'
   },
   plugins: [
     // new BundleAnalyzerPlugin(),
-    // new LoadablePlugin()
+    new LoadablePlugin()
   ]
 }
 
