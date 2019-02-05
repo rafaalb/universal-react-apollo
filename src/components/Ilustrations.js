@@ -3,6 +3,7 @@ import { gql } from 'apollo-boost';
 import { Query } from 'react-apollo';
 import styled from 'styled-components';
 import IlustrationDetail from './IlustrationDetail';
+import Loading from './Loading';
 
 const GET_ILUSTRATIONS = gql`
   query {
@@ -25,18 +26,18 @@ const ItemsList = styled.div`
   grid-gap: 60px;
   max-width: ${props => props.theme.maxWidth};
   margin: 0 auto;
+  @media screen and (max-width: 700px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 export default () => {
   return (
-    <Query query={GET_ILUSTRATIONS}>
+    <Query query={GET_ILUSTRATIONS} ssr={false}>
       {({ data, error, loading }) => {
-        console.log({
-          data,
-          loading,
-          error
-        })
-        if (!data.catalogue) return null;
+        if (loading || !data.catalogue) {
+          return null
+        }
         const items = data.catalogue.children
         return (
           <ItemsList>

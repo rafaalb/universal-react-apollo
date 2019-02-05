@@ -1,18 +1,16 @@
-import Ilustrations from './components/Ilustrations';
-import Ilustration from './components/Ilustration';
+import loadable from '@loadable/component';
 
 const routes = [
   {
     path: '/',
     name: 'home',
     exact: true,
-    component: Ilustrations,
+    component: loadable(() => import('./components/Ilustrations')),
   },
   {
-    path: '/ilustration/:id',
+    path: '/ilustration',
     name: 'ilustration',
-    exact: true,
-    component: Ilustration,
+    component: loadable(() => import('./components/Ilustration'))
   },
 ];
 

@@ -45,7 +45,6 @@ const clientConfig = {
   optimization: {
     minimize: true,
     splitChunks: {
-      name: true,
       chunks: 'all',
       cacheGroups: {
 				commons: {
@@ -59,7 +58,6 @@ const clientConfig = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].js',
-    chunkFileName: '[name].bundle.js'
   },
   plugins: [
     // new BundleAnalyzerPlugin(),

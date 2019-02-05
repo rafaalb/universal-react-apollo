@@ -2,6 +2,10 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
+const colors = ['#f6f2b2', '#c0d5ed', '##f0ddf0', '#6496d1', '#bbdccb', '#f3cc89', '#cab7eb', '#ed7e84']
+
+const getColor = () => colors[Math.floor(Math.random() * 8)]
+
 const Item = styled.div`
   background: white;
   border: 1px solid ${props => props.theme.offWhite};
@@ -14,28 +18,6 @@ const Item = styled.div`
     height: 400px;
     object-fit: cover;
   }
-  p {
-    font-size: 12px;
-    line-height: 2;
-    font-weight: 300;
-    flex-grow: 1;
-    padding: 0 3rem;
-    font-size: 1.5rem;
-  }
-  .buttonList {
-    display: grid;
-    width: 100%;
-    border-top: 1px solid ${props => props.theme.lightgrey};
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    grid-gap: 1px;
-    background: ${props => props.theme.lightgrey};
-    & > * {
-      background: white;
-      border: 0;
-      font-size: 1rem;
-      padding: 1rem;
-    }
-  }
 `;
 
 const Title = styled.h3`
@@ -44,14 +26,20 @@ const Title = styled.h3`
   transform: skew(-5deg) rotate(-1deg) translateY(-20px);
   margin-top: -3rem;
   text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+  &:hover a {
+    color: ${props => props.color};
+  }
 `;
 
 export default class IlustrationDetail extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      color: 'black'
+      color: colors[0]
     }
+  }
+  componentDidMount() {
+    this.setState({ color: getColor() })
   }
   render() {
     const { item } = this.props;
@@ -60,8 +48,10 @@ export default class IlustrationDetail extends Component {
       return (
         <Item>
           <img src={IMAGE_URL} alt={item.name} />
-          <Title>
-            <Link to={`/ilustration/${item.name}`}>
+          <Title color={this.state.color}>
+            <Link
+              to={`/ilustration?id=${item.id}`}
+            >
               {item.name}
             </Link>
           </Title>
@@ -71,3 +61,5 @@ export default class IlustrationDetail extends Component {
     return null
   }
 }
+
+export { Item }
