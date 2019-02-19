@@ -1,9 +1,9 @@
-##React Universal Rendering Boilerplate
+## React Universal Rendering Boilerplate
 
 
 Starter kit containing build tooling and configuration to kick an universal rendering application on React with Apollo.
 
-##Features
+## Features
 
  - **react-router** v4 as the router 
  - **express** as server
@@ -11,7 +11,7 @@ Starter kit containing build tooling and configuration to kick an universal rend
  - **styled components** for styling
 
 
-##quick start
+## quick start
 
 To initiate development environment:
 > npm run dev
