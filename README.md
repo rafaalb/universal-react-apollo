@@ -5,10 +5,10 @@ Starter kit containing build tooling and configuration to kick an universal rend
 
 #Features
 
-*react-router* v4 as the router
-*express* as server
-code splitting with *loadable components*
-*styled components* for styling
+## *react-router* v4 as the router
+## *express* as server
+## code splitting with *loadable components*
+## *styled components* for styling
 
 
 #quick start
