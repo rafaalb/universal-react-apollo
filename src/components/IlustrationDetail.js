@@ -8,7 +8,7 @@ const getColor = () => colors[Math.floor(Math.random() * 8)]
 
 const Item = styled.div`
   background: white;
-  border: 1px solid ${props => props.theme.offWhite};
+  border: 1px solid white;
   box-shadow: ${props => props.theme.bs};
   position: relative;
   display: flex;

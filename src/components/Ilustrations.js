@@ -33,7 +33,7 @@ const ItemsList = styled.div`
 
 export default () => {
   return (
-    <Query query={GET_ILUSTRATIONS} ssr={false}>
+    <Query query={GET_ILUSTRATIONS}>
       {({ data, error, loading }) => {
         if (loading || !data.catalogue) {
           return null
